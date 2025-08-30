@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZyroX Mods - Bowmasters</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+  /* === FONT IMPORT === */
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', monospace;
+  }
+
+  body {
+    background: #0f172a;
+    color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+        /* Header */
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 60px;
+          background: #1e293b;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          z-index: 100;
+        }
+        
+        header h1 {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+        
+        /* Hamburger Menu */
+        .menu-icon {
+          width: 30px;
+          height: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          cursor: pointer;
+        }
+        
+        .menu-icon div {
+          height: 4px;
+          width: 100%;
+          background: #f8fafc;
+          border-radius: 2px;
+        }
+
+      /* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 60px;          /* header height */
+  left: -220px;       /* hide by default */
+  width: 220px;
+  height: 100%;
+  background: #1e293b;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  left: 0;            /* show sidebar */
+}
+
+/* Main content shift (optional) 
+body.sidebar-open main {
+  margin-left: 220px;
+  transition: margin-left 0.3s ease;
+}
+
+  /* === MAIN === */
+  main {
+    flex: 1;
+    padding: 80px 20px 20px;
+  }
+
+  /* === APP CARD === */
+  .app-card {
+    display: flex;
+    align-items: center;
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  }
+  .app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    margin-right: 15px;
+  }
+.btn-group {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  margin-top: 10px;
+}
+
+.download-btn, .buy-btn {
+  flex: 1; /* equal width */
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  text-align: center;
+  transition: background 0.3s, transform 0.2s;
+}
+
+/* Download Button */
+.download-btn {
+  background: #334155;
+  color: #fff;
+}
+.download-btn:hover {
+  background: #f43f5e;
+  transform: scale(1.05);
+}
+
+/* Buy Button */
+.buy-btn {
+  background: #10b981; /* green */
+  color: #fff;
+}
+.buy-btn:hover {
+  background: #059669; /* darker green */
+  transform: scale(1.05);
+}
+
+  /* === INFO === */
+  .info, .features, .video-section {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    animation: fadeIn 0.8s ease forwards;
+  }
+  .info h3, .features h3, .video-section h3 {
+    margin-bottom: 10px;
+    color: #f43f5e;
+  }
+  .info div { margin-bottom: 10px; }
+
+  /* === FEATURES === */
+  .features ul {
+    list-style: none;
+    padding: 0;
+  }
+  .features li {
+    margin-bottom: 6px;
+  }
+
+  /* === VIDEO === */
+  .video-container iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 220px;
+    border-radius: 8px;
+  }
+
+  /* === FOOTER === */
+  footer {
+    background: #1e293b;
+    padding: 15px;
+    text-align: center;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .social-icons a img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+  }
+  .social-icons a img:hover {
+    transform: scale(1.2);
+  }
+
+  /* === ANIMATION === */
+  @keyframes fadeIn {
+    from {opacity:0; transform: translateY(-20px);}
+    to {opacity:1; transform: translateY(0);}
+  }
+  </style>
+</head>
+<body>
+   <!-- Header -->
+ <header>
+   <h1>ZyroX Mods</h1>
+   <div class="menu-icon" id="menu-icon">
+     <div></div>
+     <div></div>
+     <div></div>
+   </div>
+ </header>
+ 
+ <!-- Sidebar -->
+ <nav class="sidebar" id="sidebar">
+   <a href="index.html">Home</a>
+   <a href="Premium.html">Premium Apps</a>
+   <a href="Contact.html">Contact</a>
+ </nav>
+
+  <main>
+  <!-- App Card -->
+<section class="app-card">
+  <!-- Image from 'img' folder -->
+  <img src="Bowmasters.png" alt="Bowmasters" class="app-icon">
+  
+  <div class="app-details">
+    <h2>Mob Control</h2>
+    <p id="download-info">v2.92.0 • Updated: Aug • 0 Downloads</p>
+    
+    <!-- Download button -->
+    <a href="https://sub2grow.com/69I6ctX" class="download-btn" target="_blank">Download</a>
+    
+    <!-- Buy button -->
+    <a href="https://esewa.com.np/yourpaymentlink" target="_blank" class="buy-btn">$2 Buy</a>
+  </div>
+</section>
+      
+
+   <!-- Info Table -->
+<section class="info">
+  <h3>App Information</h3>
+  <div class="version-item">
+    <strong>Version:</strong><br>
+    <span class="version-text">1.3.0</span>
+  </div>
+  <div class="info-item">
+    <strong>Update date:</strong><br>
+    <span class="info-text">August 16, 2025</span>
+  </div>
+  <div class="info-item">
+  <strong>Downloads:</strong><br>
+  <span class="info-text" id="info-downloads">0</span>
+</div>
+  <div class="info-item">
+    <span class="info-text">Not Required</span>
+  </div>
+</section>  
+
+    <!-- Video -->
+    <section class="video-section">
+      <h3>Watch Video</h3>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/LrxJBVHh3P0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Features -->
+<section class="features">
+  <h3>Features</h3>
+
+  <!-- Free Features -->
+  <div class="feature-collapse">
+    <button class="feature-btn">✨ Free Features ▼</button>
+    <div class="panel">
+      <ul>
+        <li>✔ Unlimited Coins</li>
+        <li>✔ Unlimited Skipits</li>
+        <li>✔ Unlimited Stars</li>
+        <li>✔ More Free Features +</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Premium Features -->
+  <div class="feature-collapse">
+    <button class="feature-btn">🔒 Premium Features ▼</button>
+    <div class="panel">
+      <ul>
+        <li>✔ God Mode</li>
+        <li>✔ One Hit Kill</li>
+        <li>✔ All Skins Unlocked</li>
+        <li>✔ Raid & Underworld Unlock</li>
+      </ul>
+      <p class="locked-note">👉 Unlock these with Premium Buy!</p>
+    </div>
+  </div>
+</section>
+  </main>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 ZyroX Mods</p>
+  <div class="footer-icons">
+    <a href="https://www.instagram.com/a_j_a_y_a_c_h_e_t_t_r_i?igsh=cDRvbXc4bzd0NTUy" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com/@zyroxtech" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://t.me/NepXModsChat" target="_blank"><i class="fab fa-telegram"></i></a>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <script>
+// Sidebar toggle
+const menuIcon = document.getElementById("menu-icon");
+const sidebar = document.getElementById("sidebar");
+menuIcon.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  document.body.classList.toggle("sidebar-open"); // main content shift
+});
+
+// Feature collapse toggle
+const featureBtns = document.querySelectorAll(".feature-btn");
+
+featureBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const panel = btn.nextElementSibling;
+
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+      btn.textContent = btn.textContent.replace("▲", "▼");
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      btn.textContent = btn.textContent.replace("▼", "▲");
+    }
+  });
+});
+
+  // Download count system
+  const downloadBtn = document.querySelector(".download-btn");
+  const downloadInfo = document.getElementById("download-info");
+  const infoDownloads = document.getElementById("info-downloads");
+
+  let count = localStorage.getItem("downloadCount") || 0;
+  downloadInfo.textContent = `v2.92.0 • Updated: Aug 16, 2025 • ${count} Downloads`;
+  infoDownloads.textContent = count;
+
+  downloadBtn.addEventListener("click", () => {
+    count++;
+    localStorage.setItem("downloadCount", count);
+    downloadInfo.textContent = `v2.92.0 • Updated: Aug 16, 2025 • ${count} Downloads`;
+    infoDownloads.textContent = count;
+  });
+  </script>
+</body>
+</html>

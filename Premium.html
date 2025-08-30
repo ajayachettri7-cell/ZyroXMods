@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZyroX Mods - Premium</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ZyroX Mods</h1>
+        <div class="menu-icon" id="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <a href="index.html">Home</a>
+        <a href="Premium.html">Premium Apps</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <div class="welcome-box">
+            <h2>Premium APKs</h2>
+            <p>Get exclusive APKs & mods with premium features!</p>
+        </div>
+
+        <!-- APK Card -->
+        <div class="game-card">
+            <h3>Mob Control</h3>
+            <p>Version: 2.92.0 (64-bit)</p>
+            <p>Unlocked Features & Mod Menu</p>
+            <div class="game-buttons">
+                <button onclick="window.location.href='mobcontrol.html'">View APK</button>
+                <a href="https://esewa.com.np/yourpaymentlink" target="_blank" class="buy-btn">$2 Buy</a>
+            </div>
+        </div>
+        <!-- APK Card -->
+<div class="game-card">
+    <h3>Bowmasters</h3>
+    <p>Version: 2.92.0 (64-bit)</p>
+    <p>Unlocked Features & Mod Menu</p>
+    <div class="game-buttons">
+        <button onclick="window.location.href='Bowmasters.html'">View APK</button>
+        <a href="https://esewa.com.np/yourpaymentlink" target="_blank" class="buy-btn">$2 Buy</a>
+    </div>
+</div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ZyroX Mods</p>
+        <div class="footer-icons">
+            <a href="https://www.instagram.com/a_j_a_y_a_c_h_e_t_t_r_i?igsh=cDRvbXc4bzd0NTUy" target="_blank" class="icon">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@zyroxtech" target="_blank" class="icon">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://t.me/NepXModsChat" target="_blank" class="icon">
+                <i class="fab fa-telegram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Music -->
+    <audio id="bg-music" src="ncs.mp3" loop autoplay></audio>
+    <button class="music-btn" onclick="toggleMusic()">PlayMusic</button>
+
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const sidebar = document.getElementById('sidebar');
+
+        menuIcon.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const btn = document.querySelector('.music-btn');
+            if (music.paused) {
+                music.play();
+                btn.textContent = 'Pause Music';
+            } else {
+                music.pause();
+                btn.textContent = 'Play Music';
+            }
+        }
+    </script>
+
+</body>
+</html>
